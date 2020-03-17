@@ -2,6 +2,7 @@
 // console.log your props and see how to add likes to this component so that it will update when you click the icon.
 // HINT: You will need to add an onClick event pass through your props and update the hard coded Likes
 import React from "react";
+import Post from "./Post";
 
 const LikeSection = props => {
   return (
@@ -10,16 +11,14 @@ const LikeSection = props => {
       className="like-section"
       key="likes-icons-container"
     >
-      <div className="like-section-wrapper">
+      <div className="like-section-wrapper" onClick={props.incrementLikes}>
         <i className="far fa-heart" />
       </div>
       <div className="like-section-wrapper">
         <i className="far fa-comment" />
       </div>
     </div>
-    <p className="like-number">
-      
-      likes</p>
+    <p className="like-number">{props.likes} likes</p>
 </div>
   )
 };
